@@ -41,6 +41,20 @@ divSenha.setAttribute("id", "Senha");
 divSenha.appendChild(senha);
 form.appendChild(divSenha);
 
+//Radio Buttons
+let botaoRadio1 = document.createElement("input")
+let botaoRadio2 = document.createElement("input")
+let label1 = document.createTextNode("SIM")
+let label2 = document.createTextNode("NÃO")
+botaoRadio1.setAttribute("type", "radio")
+botaoRadio2.setAttribute("type", "radio")
+botaoRadio1.setAttribute("name", "Verificador")
+botaoRadio2.setAttribute("name", "Verificador")
+form.appendChild(label1) //Texto
+form.appendChild(botaoRadio1) //Radiobutton
+form.appendChild(label2) //Texto
+form.appendChild(botaoRadio2) //Radiobutton
+
 //Inserção dos botões:
 
 var botaoEnviar = document.createElement("button");
@@ -143,3 +157,14 @@ divSenha.addEventListener('mouseover', function() {
     senha.disabled = false
     mouseSenha = true
 })
+
+//DOM + Array + CSS
+let arr = document.getElementsByName("Verificador")
+arr[0].onclick = function() {
+    document.body.style.backgroundColor = "black"
+    let v = usuario.value.trim()
+    console.log(v)
+}
+arr[1].onclick = function() {
+    document.body.style.backgroundColor = "white"
+}
